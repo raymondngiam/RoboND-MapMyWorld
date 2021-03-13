@@ -89,3 +89,19 @@ $ catkin_make
 - The video demo below shows that the robot started off at the wrong location but managed to localize itself towards the end of path:
 
     ![alt text](images/demo.gif)
+
+### Full Map
+
+- Below is the visualization of the full map of the simulation world.
+
+- The full mapping was completed with 10 `global loop closure`.
+
+- `RTAB-Map` map file for the complete map can be downloaded from <a href="https://drive.google.com/file/d/1uVV7k56jAPAi10SXrlulJVV0_9opc8D6/view?usp=sharing">here</a>
+
+    ![alt text](images/full_map.png)
+
+### Reflections
+
+- When performing `RTAB-Map` mapping in a world with repeated, similar scenes at different locations, we need to tweak the `RTAB-Map` param `Vis/MinInliers` to higher number, so that we don't mis-interpret the two visually similar places as the same loop closure point, and enforce a wrong contraint to the SLAM optimization problem.
+
+- For the full mapping example in this repo, `Vis/MinInliers` of `35` was used.
