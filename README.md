@@ -100,6 +100,10 @@ $ catkin_make
 
     ![alt text](images/full_map.png)
 
+    ![alt text](images/3d_point_cloud.png)
+
+    ![alt text](images/3d_point_cloud_closeup.png)
+
 ### Reflections
 
 - When performing `RTAB-Map` mapping in a world with repeated, similar scenes at different locations, we need to tweak the `RTAB-Map` param `Vis/MinInliers` to higher number, so that we don't mis-interpret the two visually similar places as the same loop closure point, and enforce a wrong contraint to the SLAM optimization problem.
