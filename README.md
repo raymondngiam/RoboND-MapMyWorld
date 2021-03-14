@@ -92,17 +92,36 @@ $ catkin_make
 
 ### Full Map
 
-- Below is the visualization of the full map of the simulation world.
-
 - The full mapping was completed with 10 `global loop closure`.
 
 - `RTAB-Map` map file for the complete map can be downloaded from <a href="https://drive.google.com/file/d/1uVV7k56jAPAi10SXrlulJVV0_9opc8D6/view?usp=sharing">here</a>
+
+- Below is the visualization of the full map of the simulation world.
 
     ![alt text](images/full_map.png)
 
     ![alt text](images/3d_point_cloud.png)
 
     ![alt text](images/3d_point_cloud_closeup.png)
+
+- To generate `pgm` map file that can be used by other ROS localization packages such as <a href='https://wiki.ros.org/amcl'>AMCL</a>
+
+    ``` bash
+    $ rosrun map_server map_saver -f myMap
+    ```
+    ![alt text](images/myMap.png)
+
+    Along with the `myMap.pgm` file, a config file `myMap.yaml` will also be generated.
+
+    ``` {.line-numbers}
+    image: myMap.pgm
+    resolution: 0.050000
+    origin: [-13.249369, -12.171536, 0.000000]
+    negate: 0
+    occupied_thresh: 0.65
+    free_thresh: 0.196
+    ```
+
 
 ### Reflections
 
